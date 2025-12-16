@@ -1,0 +1,610 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+/* NAVBAR */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    transition: 0.3s;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+/* When Scrolled */
+header.scrolled {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 15px 50px;
+}
+
+/* COVER SECTION */
+.cover {
+    height: 100vh;
+    width: 100%;
+    padding: 0 40px;
+    background: linear-gradient(to bottom right, #c3531a, #e8a032);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.cover h1 {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.cover h2 {
+    font-size: 28px;
+    margin-top: 20px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.cover-details {
+    margin-top: 40px;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.cover-details p {
+    margin-bottom: 10px;
+}
+
+.date {
+    margin-top: 20px;
+}
+/* Mid arrow between text */
+.mid-arrow {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.45); /* lighter */
+    margin: 5px 0;
+    animation: fadeMove 1.4s infinite ease-in-out;
+}
+
+/* subtle fade + move animation */
+@keyframes fadeMove {
+    0%   { opacity: 0.4; transform: translateY(0); }
+    50%  { opacity: 0.8; transform: translateY(4px); }
+    100% { opacity: 0.4; transform: translateY(0); }
+}
+
+/* EXECUTIVE SUMMARY SECTION */
+.summary-section {
+    padding: 40px 40px;
+    background: #faf7f2; /* soft neutral background */
+    color: #333;
+}
+
+.summary-section .container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Title */
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeSlide 1s ease forwards;
+}
+
+/* Animated underline */
+.title-underline {
+    width: 0;
+    height: 4px;
+    margin: 0 auto 40px auto;
+    background: linear-gradient(to right, #c3531a, #e8a032);
+    border-radius: 5px;
+    animation: expandLine 1.2s ease forwards;
+}
+
+/* Summary text animation */
+.summary-text {
+    font-size: 20px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeIn 1.6s ease forwards;
+}
+/* Default hidden state */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.9s ease;
+}
+
+/* When visible */
+.fade-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Underline animation */
+.title-underline {
+    height: 4px;
+    width: 0;
+    margin: 0 auto 40px;
+    background: linear-gradient(to right, #c3531a, #e8a032);
+    border-radius: 5px;
+    transition: width 0.9s ease;
+}
+
+.title-underline.visible {
+    width: 160px;
+}
+
+/* INTRODUCTION SECTION */
+.intro-section {
+    padding: 40px 40px;
+    background: white;
+    color: #333;
+}
+
+.intro-section .container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+/* 2-Column Grid */
+.intro-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Content Boxes */
+.intro-box {
+    padding: 30px;
+    border: 2px solid rgba(0,0,0,0.15);
+    border-radius: 12px;
+    background: #fafafa;
+    text-align: left;
+    transition: 0.3s;
+}
+
+/* Box Hover Effect */
+.intro-box:hover {
+    border-color: #c3531a;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+/* Box Titles */
+.intro-box h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #c3531a;
+}
+
+/* Box Paragraphs */
+.intro-box p {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 850px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /*Mile stone */
+}
+.milestones-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.milestones-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.milestones-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1a8a6f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.flag-icon::before {
+    content: "\📄"; /* Using a flag-like symbol */
+    color: #fff;
+    font-size: 20px;
+}
+
+.document-icon::before {
+    content: "\📄"; /* Using a document symbol */
+    color: #fff;
+    font-size: 20px;
+}
+
+.calendar-icon::before {
+    content: "\📆"; /* Using a calendar symbol */
+    color: #fff;
+    font-size: 20px;
+}
+
+.year {
+    font-size: 18px;
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+}
+/* ERA SECTION GENERAL STYLING */
+.era-section {
+    padding: 100px 40px;
+    background: #fdfbf6;
+    color: #333;
+}
+
+.era-section .container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Grid Layout */
+.era-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Image Styling */
+.era-image img {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid rgba(0,0,0,0.15);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+/* ============================
+   COLONIAL ERA SECTION
+============================ */
+.colonial-section {
+    padding: 100px 40px;
+    background: #fff;
+    color: #333;
+    position: relative;
+}
+
+.colonial-section .container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Tiny orange tag */
+.era-tag {
+    display: inline-block;
+    background: #c3531a;
+    color: white;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+/* Grid layout */
+.colonial-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.section-container {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.tag {
+    background: rgb(255, 123, 0);
+    color: white;
+    padding: 12px 12px;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+}
+
+.intro-text {
+    margin-top: 50px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* --- BOX BASE STYLE --- */
+.box {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+.colonial-era-section {
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fdfdfd;
+}
+
+/* Orange Era Tag */
+.era-tag {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+    background: #c3531a;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Title */
+.era-title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 36px;
+    color: black;
+    margin-bottom: 70px;
+}
+
+/* Layout */
+.content-wrapper {
+    display: flex;
+    gap: 25px;
+}
+
+/* LEFT BOX */
+.left-box {
+    width: 60%;
+    background: lch(100% 0.01 296.81); 
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+}
+
+.sub-heading {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.details, .case-details, .law-details {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.case-image, .law-image {
+    width: 100%;
+    margin: 10px 0 20px;
+    border-radius: 8px;
+}
+
+/* RIGHT BOX */
+.right-box {
+    width: 40%;
+    background: #e8f4ff;  /* different color */
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+}
+
+.media-list li {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.media-list li strong {
+    font-weight: bold;
+}
+
+.media-details {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.title-underline {
+    height: 4px;
+    width: 0;
+    border-top: 0 auto;
+    margin:   0 auto 40px;
+    background: linear-gradient(to right, #c3531a, #e8a032);
+    border-radius: 5px;
+    transition: width 0.9s ease;
+
+}
+/* =====================================
+   MOBILE RESPONSIVE FIXES
+===================================== */
+@media (max-width: 768px) {
+
+    /* GENERAL */
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    header nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: white;
+        height: 100vh;
+        width: 70%;
+        padding-top: 80px;
+        transition: 0.4s;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 25px;
+        padding-left: 30px;
+    }
+
+    /* HAMBURGER BUTTON */
+    .menu-btn {
+        display: block;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .menu-btn span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: #333;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* Show mobile menu */
+    nav.active {
+        right: 0;
+    }
+
+    /* ---------- COVER PAGE ---------- */
+    .cover h1 {
+        font-size: 40px;
+    }
+
+    .cover h2 {
+        font-size: 20px;
+    }
+
+    .cover-details {
+        font-size: 16px;
+    }
+
+    /* ---------- INTRO SECTION ---------- */
+    .intro-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .intro-box {
+        padding: 20px;
+    }
+
+    /* ---------- MILESTONES ---------- */
+    .milestones-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .milestone {
+        width: 100%;
+    }
+
+
+    /* ---------- COLONIAL ERA SECTION ---------- */
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .left-box,
+    .right-box {
+        width: 100%;
+    }
+
+    .era-tag {
+        top: 20px;
+        left: 20px;
+        padding: 5px 10px;
+    }
+
+    .era-title {
+        margin-top: 80px;
+        font-size: 28px;
+    }
+
+    /* Reduce padding on mobile */
+    .colonial-era-section {
+        padding: 20px;
+    }
+}
